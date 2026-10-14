@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Personal Bookmark Manager</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-content">
+      <a class="brand" href="#all" aria-label="Personal Bookmark Manager home">
+        <span class="brand-mark" aria-hidden="true">★</span>
+        <span>Bookmark<em>ed</em></span>
+      </a>
+      <nav class="main-nav" aria-label="Main navigation">
+        <a href="#all" data-route="all">All bookmarks</a>
+        <a href="#add" data-route="add" class="nav-add">+ Add bookmark</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="app-shell">
+    <section id="all-view" class="view" aria-labelledby="all-heading">
+      <div class="view-heading">
+        <div>
+          <p class="eyebrow">Your collection</p>
+          <h1 id="all-heading">All bookmarks</h1>
+          <p class="subtitle">Keep the things worth coming back to close at hand.</p>
+        </div>
+        <a class="primary-button" href="#add">+ Add bookmark</a>
+      </div>
+      <div id="bookmark-list" class="bookmark-list" aria-live="polite"></div>
+    </section>
+
+    <section id="add-view" class="view" aria-labelledby="add-heading" hidden>
+      <div class="form-heading">
+        <p class="eyebrow">Build your collection</p>
+        <h1 id="add-heading">Add a bookmark</h1>
+        <p class="subtitle">Save something useful, inspiring, or just plain funny.</p>
+      </div>
+      <form id="bookmark-form" class="bookmark-form">
+        <div class="form-field">
+          <label for="title">Title</label>
+          <input id="title" name="title" type="text" placeholder="e.g. The best pasta recipe" required maxlength="120">
+        </div>
+        <div class="form-field">
+          <label for="url">URL</label>
+          <input id="url" name="url" type="url" placeholder="https://example.com" required>
+        </div>
+        <div class="form-field">
+          <label for="category">Category</label>
+          <select id="category" name="category" required>
+            <option value="Articles">Articles</option>
+            <option value="Recipes">Recipes</option>
+            <option value="Funny Videos">Funny Videos</option>
+          </select>
+        </div>
+        <div class="form-actions">
+          <button type="submit" class="primary-button">Save bookmark</button>
+          <a href="#all" class="secondary-button">Cancel</a>
+        </div>
+      </form>
+    </section>
+  </main>
+
+  <footer class="site-footer">Everything you save stays in this browser.</footer>
+  <script src="index.js"></script>
+</body>
+</html>
